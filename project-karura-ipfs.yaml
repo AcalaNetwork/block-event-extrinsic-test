@@ -13,9 +13,9 @@ runner:
 schema: 
     file: ./schema.graphql
 network:
-  chainId: "0xfc41b9bd8ef8fe53d58c7ea67c794c7ec9a73daf05e6d54b14ff6342c99ba64c"
-  dictionary: https://api.subquery.network/sq/subquery/acala-dictionary
-  endpoint: wss://acala.polkawallet.io
+  chainId: '0xbaf5aabe40646d11f0ee8abbdc64f4a4b7674925cba08e4a05ff9ebed6e2126b'
+  dictionary: https://api.subquery.network/sq/subquery/karura-dictionary
+  endpoint: wss://karura.api.onfinality.io/public-ws
   chaintypes:
     file: './src/chain-types.js'
 dataSources:
@@ -23,7 +23,8 @@ dataSources:
     startBlock: 1
     mapping:
       file: "./dist/index.js"
-      - handler: handleBlock
+      handlers:
+        - handler: handleBlock
           kind: substrate/BlockHandler
         - handler: handleEvent
           kind: substrate/EventHandler
